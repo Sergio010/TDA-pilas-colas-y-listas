@@ -1,0 +1,47 @@
+
+#Nombre: Sergio Retamal
+ #fecha: 19/06/2020
+#---------------------------*-----------------------------------------
+# Ejercicio:
+# Escribir en Python un metodo que permita insertar elementos ordenados de una lista creciente donde
+# el elemento mas pequeño se encuentre a la izquierda y a la derecha el mayor valor.
+
+
+# -*- coding: utf-8 -*-
+# Creamos la clase Lista
+class Lista:
+    
+     def __init__(self):
+         self.item = []
+         
+#Metodo para comprobar si la lista es vacia o no
+     def estaVacia(self):
+         return self.item == []
+  
+# Método para agregar elementos por la derecha de la lista de forma creciente
+     def agregar(self, item):
+         self.item.append(item)
+         return self.item.sort()
+     
+ #Metodo para eliminar un nodo desde la izquierda
+     def eliminarIzquierda(self):
+         return self.item.pop(0)
+     
+ #Metodo para eliminar un nodo desde la derecha    
+     def eliminarDerecha(self):
+         return self.item.pop(-1)
+     
+ # Método para imprimir la lista de Nodos
+     def imprimirLista(self):
+        print(self.item, end =" - ")
+    
+    
+ #Main   
+l = Lista()
+l.agregar(4)
+l.agregar(1)
+l.agregar(5)
+l.agregar(10)
+l.agregar(0)
+print("Los elementos de la lista son:",)
+l.imprimirLista()
