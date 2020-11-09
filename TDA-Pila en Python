@@ -1,0 +1,52 @@
+
+class Pila:
+     def __init__(self):
+         self.items = []
+
+     def estaVacia(self):
+         return self.items == []
+
+     def IntroducirElemento(self, item):
+         self.items.append(item)
+
+     def SacarElemento(self):
+         return self.items.pop()
+     
+     def tamano(self):
+         return len(self.items)
+     
+     def Tope(self):
+         return self.items[len(self.items)-1]
+
+
+      
+
+
+p = Pila()
+
+print("está vacía? " + str(p.estaVacia()))
+
+p.IntroducirElemento(100)
+p.IntroducirElemento('perro')
+p.IntroducirElemento(16416549564.55641)
+p.IntroducirElemento("benja")
+
+print("se elimino el dato: "+ str(p.SacarElemento()))
+
+print("El último elemento es: "+ str(p.Tope()))
+
+
+p.IntroducirElemento(True)
+
+
+print("El tamaño actual de la pilas es: " + str(p.tamano()))
+
+
+print("está vacía? " + str(p.estaVacia()))
+
+p.IntroducirElemento(8.4)
+
+
+print("se elimino: "+ str(p.SacarElemento()))
+print("El tamaño actual de la pilas es: " + str(p.tamano()))
+        
