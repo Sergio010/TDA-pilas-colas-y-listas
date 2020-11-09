@@ -1,0 +1,52 @@
+class Nodo:
+    
+  def __init__(self, elem):
+    self.__setElem(elem)
+    self.setSig(None)
+  def __setElem(self, elem):
+    self.__elem = elem
+  def setSig(self, sig):
+    self.__sig = sig
+  def getElem(self):
+    return self.__elem
+  def getSig(self):
+    return self.__sig
+
+
+class Pila:
+    
+  def __init__(self):
+    self.__crear()
+    
+  def __crear(self):
+    self.__tope = None
+    
+  def push(self, elem):
+    nuevo = Nodo(elem)
+    if not self.isEmpty():
+      nuevo.setSig(self.__tope)
+    self.__tope = nuevo
+    
+  def pop(self):
+    if not self.isEmpty():
+      self.__tope = self.__tope.getSig()
+      
+  def top(self):
+    return self.__tope.getElem()
+
+  def isEmpty(self):
+    return self.__tope == None
+
+
+p = Pila()
+
+p.push(10)
+p.push(20)
+p.push("Hola mundo")
+p.pop()
+p.push(100)
+p.pop()
+
+print ("La pila es vacia?",p.isEmpty())
+if not p.isEmpty():
+  print("El valor del tope es:",p.top())
