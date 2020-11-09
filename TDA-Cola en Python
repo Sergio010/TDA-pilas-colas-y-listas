@@ -1,0 +1,30 @@
+# -*- coding: utf-8 -*-
+
+class Cola():
+    
+    def __init__(self):
+        self.item = [];
+
+    def pop(self):
+        return self.item.pop(0);
+    
+    def push(self,item):
+        return self.item.append(item);
+    
+    def tope(self):
+        return self.item[len(self.item)-1];
+    
+    def vacia(self):
+        return self.item == []
+        
+    def tamaño(self):
+        return len(self.item)
+    
+cola1 = Cola();
+
+cola1.push(10);
+cola1.push(11);
+cola1.push("Hola")
+print("El tope de la cola es:",cola1.tope())
+print("Se elimino el elemento:",cola1.pop())
+print("El tope de la cola es:",cola1.tope())
